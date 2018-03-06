@@ -115,6 +115,8 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         if presenting {
             snapshotView.transform = fromView.transform
+            snapshotView.frame.origin.x = playerViewSnapshot.frame.origin.y
+            snapshotView.frame.origin.y = playerViewSnapshot.frame.origin.x
             containerView.insertSubview(snapshotView, belowSubview: toView)
 
             UIView.animate(withDuration: duration, animations: {
